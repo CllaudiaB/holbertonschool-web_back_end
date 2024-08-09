@@ -4,6 +4,7 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """Inherits from BaseCaching and is a caching system"""
     def __init__(self):
         """ Initiliaze
         """
@@ -14,7 +15,9 @@ class FIFOCache(BaseCaching):
         """
         if key is None or item is None:
             return
+
         self.cache_data[key] = item
+
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             first_key = next(iter(self.cache_data))
             self.cache_data.pop(first_key)
