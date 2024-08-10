@@ -25,7 +25,7 @@ class LRUCache(BaseCaching):
             self.od.pop(last_use)
             print(f"DISCARD: {last_use}")
         self.cache_data[key] = item
-        self.od[key] = item
+        self.od[key] = None
         return self.cache_data
 
     def get(self, key):
