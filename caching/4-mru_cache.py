@@ -17,7 +17,7 @@ class MRUCache(BaseCaching):
             return
         if key in self.cache_data:
             self.cache_data[key] = item
-            self.od.move_to_end(key)
+            self.od.move_to_end(key, False)
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             recent_use = next(iter(self.od))
@@ -33,5 +33,5 @@ class MRUCache(BaseCaching):
         """
         if key not in self.cache_data or key is None:
             return
-        self.od.move_to_end(key)
+        self.od.move_to_end(key, False)
         return self.cache_data[key]
