@@ -4,7 +4,7 @@ from base_caching import BaseCaching
 from collections import OrderedDict
 
 
-class LRUCache(BaseCaching):
+class MRUCache(BaseCaching):
     """Inherits from BaseCaching and is a caching system"""
     def __init__(self):
         super().__init__()
