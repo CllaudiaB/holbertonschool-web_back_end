@@ -27,7 +27,8 @@ class MRUCache(BaseCaching):
             print(f"DISCARD: {recent_use}")
         self.cache_data[key] = item
         self.od[key] = None
-        return self.cache_data, False
+        self.od.move_to_end(key, False)
+        return self.cache_data
 
     def get(self, key):
         """ Get an item by key
