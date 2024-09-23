@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Returns the log message obfuscated"""
-import re
-from typing import List
 import logging
+import re
+from os import environ
+from typing import List
+
+import mysql.connector
 
 PII_FIELDS = ("name", "email", "phone", "ssn", "password")
 
@@ -50,3 +53,15 @@ def get_logger() -> logging.Logger:
     logger.addHandler(handler)
 
     return logger
+
+
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """Connection to the database"""
+    username = environ.get("PERSONAL_DATA_DB_USERNAME", "root")
+    password_db = environ.get("PERSONAL_DATA_DB_PASSWORD", "")
+    host_db = environ.get("PERSONAL_DATA_DB_HOST", "localhost")
+    database_name = environ.get("PERSONAL_DATA_DB_NAME")
+    conn = mysql.connector.connect(
+        user=username, password=password_db, host=host_db, database=database_name
+    )
+    return conn
