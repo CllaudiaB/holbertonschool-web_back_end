@@ -7,6 +7,7 @@ from flask import request
 
 
 class Auth:
+    """Basic authentication"""
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Public method that return False"""
         return False
