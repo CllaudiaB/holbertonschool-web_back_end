@@ -5,10 +5,13 @@ from flask import request
 
 class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
+        """Public method that return False"""
         return False
 
     def authorization_header(self, request=None) -> str:
+        """Public method that return None"""
         return None
 
     def current_user(self, request=None) -> TypeVar("User"):
+        """Public method that return None"""
         return None
