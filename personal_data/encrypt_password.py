@@ -7,4 +7,4 @@ from typing import ByteString
 
 def hash_password(password: str) -> ByteString:
     """Return hashed password"""
-    return bcrypt.hashpw(bytes(password, "utf-8"), bcrypt.gensalt(14))
+    return bcrypt.hashpw(password, bcrypt.gensalt())
