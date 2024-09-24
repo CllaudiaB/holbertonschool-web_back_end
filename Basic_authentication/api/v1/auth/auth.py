@@ -3,6 +3,7 @@
 
 
 from typing import List, TypeVar
+
 from flask import request
 
 
@@ -28,7 +29,7 @@ class Auth:
         """Request validation"""
         if request is None:
             return None
-        return request.headers.get('Authorization')
+        return request.headers.get("Authorization")
 
     def current_user(self, request=None) -> TypeVar("User"):
         """Public method that return None"""
