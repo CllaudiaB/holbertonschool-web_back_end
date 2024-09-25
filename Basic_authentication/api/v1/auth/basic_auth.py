@@ -4,7 +4,6 @@
 import base64
 import binascii
 import re
-
 from api.v1.auth.auth import Auth
 
 
