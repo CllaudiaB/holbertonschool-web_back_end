@@ -40,5 +40,5 @@ class BasicAuth(Auth):
             )
             if valid:
                 return valid.decode("utf-8")
-        except:
+        except binascii.Error:
             return None
