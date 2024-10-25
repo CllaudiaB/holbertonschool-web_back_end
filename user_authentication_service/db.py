@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 """DB module
 """
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -28,7 +30,7 @@ class DB:
             DBSession = sessionmaker(bind=self._engine)
             self.__session = DBSession()
         return self.__session
-    
+
     def add_user(self, email, hashed_password):
         """Create user"""
         user = User(email=email, hashed_password=hashed_password)
