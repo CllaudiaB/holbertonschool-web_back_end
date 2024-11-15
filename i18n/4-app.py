@@ -2,7 +2,7 @@
 """Basic Flask app"""
 
 
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
@@ -21,9 +21,9 @@ babel = Babel(app)
 
 def get_locale():
     """Determine the best match with our supported languages"""
-    requested_locale = request.args.get('locale')
+    requested_locale = request.args.get("locale")
 
-    if requested_locale in app.config['BABEL_SUPPORTED_LOCALES']:
+    if requested_locale in app.config["LANGUAGES"]:
         return requested_locale
 
     return request.accept_languages.best_match(app.config["LANGUAGES"])
