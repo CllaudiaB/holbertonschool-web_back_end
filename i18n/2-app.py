@@ -29,8 +29,8 @@ babel.init_app(app, locale_selector=get_locale)
 
 @app.route("/")
 def home():
-    """Return the content of the 1-index.html file"""
-    return render_template("1-index.html")
+    """Return the content of the 2-index.html file"""
+    return render_template("2-index.html")
 
 
 if __name__ == "__main__":
