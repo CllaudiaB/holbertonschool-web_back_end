@@ -7,6 +7,7 @@ from flask_babel import Babel
 
 
 class Config():
+    "Config languages and timezone"
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -20,7 +21,7 @@ babel = Babel(app)
 
 @app.route("/")
 def home():
-    """Return the content of the 0-index.html file"""
+    """Return the content of the 1-index.html file"""
     return render_template("1-index.html")
 
 
