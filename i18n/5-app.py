@@ -38,12 +38,14 @@ def get_locale():
 
 
 def get_user(id: int):
+    """Returns a user dictionary"""
     user = users[id]
     return(user)
 
 
 @app.before_request
 def before_request():
+    """Find a user"""
     user = request.args.get("login_as")
     if user:
         g.user = get_user(int(user))
