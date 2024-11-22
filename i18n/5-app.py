@@ -37,19 +37,19 @@ def get_locale():
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
-def get_user(id: int):
+def get_user(id):
     """Returns a user dictionary"""
-    user = users[id]
-    return(user)
+    if id:
+        id = int(id)
+    return users.get(id, None)
 
 
 @app.before_request
 def before_request():
     """Find a user"""
     user = request.args.get("login_as")
-    if user:
-        g.user = get_user(int(user))
-    return None
+    g.user = get_user(user)
+
 
 
 babel.init_app(app, locale_selector=get_locale)
