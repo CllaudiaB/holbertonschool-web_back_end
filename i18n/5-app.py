@@ -51,7 +51,6 @@ def before_request():
     g.user = get_user(user)
 
 
-
 babel.init_app(app, locale_selector=get_locale)
 
 
