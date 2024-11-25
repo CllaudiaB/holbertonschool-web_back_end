@@ -23,7 +23,7 @@ class Cache:
             Union[str, bytes, int, float]:
         """Get value"""
         value = self._redis.get(key)
-        if key and fn:
+        if fn:
             return fn(value)
         return value
 
