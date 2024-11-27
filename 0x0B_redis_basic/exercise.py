@@ -33,9 +33,9 @@ def call_history(method: Callable) -> Callable:
 def replay(method: Callable) -> Callable:
     """Display the history of calls of a particular function"""
     cls = method.__self__
-    number_call = cls.get_int(method.__qualname__)
+    number_call = cls.get(method.__qualname__)
 
-    print(f"{method.__qualname__} was called {number_call} times:")
+    print(f"{method.__qualname__} was called {int(number_call)} times:")
 
     inputs = cls._redis.lrange(
         "{}:inputs".format(cls.store.__qualname__), 0, -1
