@@ -4,12 +4,12 @@ function calculateNumber(type, a, b) {
     ) {
       return Math.round(a) + Math.round(b);
     }
-    if (
+    else if (
       type === "SUBTRACT"
     ) {
       return Math.round(a) - Math.round(b);
     }
-    if (
+    else if (
       type === "DIVIDE"
     ) {
       if (Math.round(b) != 0)
@@ -17,7 +17,7 @@ function calculateNumber(type, a, b) {
         return Math.round(a) / Math.round(b);
       }
       else {
-        return "Error"
+        return "Error";
       }
     }
   
