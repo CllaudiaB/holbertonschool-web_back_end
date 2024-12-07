@@ -10,5 +10,5 @@ function calculateNumber(type, a, b) {
         return "Error";
       }
     }
-  }
-  
+}
+  module.exports = { calculateNumber };
