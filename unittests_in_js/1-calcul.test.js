@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { calculateNumber } = require("./1-calcul.js");
+const calculateNumber = require("./1-calcul.js");
 
 describe("calculateNumber Tests", function () {
     it("Retourn 6 for calculateNumber('SUM', 1.4, 4.5)", function () {
@@ -13,5 +13,5 @@ describe("calculateNumber Tests", function () {
     });
     it("Retourn 'Error' for calculateNumber('DIVIDE', 1.4, 0)", function () {
         assert.strictEqual(calculateNumber("DIVIDE", 1.4, 0), "Error");
-      });
+    });
 });

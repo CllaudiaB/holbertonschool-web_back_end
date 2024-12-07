@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { calculateNumber } = require('./0-calcul.js');
+const calculateNumber = require('./0-calcul.js');
 
 describe("calculateNumber Tests", function () {
     it("Retourn 4 for calculateNumber(1, 3)", function () {
