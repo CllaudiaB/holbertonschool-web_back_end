@@ -1,16 +1,16 @@
 function calculateNumber(type, a, b) {
     if (
-      type == "SUM"
+      type === "SUM"
     ) {
       return Math.round(a) + Math.round(b);
     }
     if (
-      type == "SUBTRACT"
+      type === "SUBTRACT"
     ) {
       return Math.round(a) - Math.round(b);
     }
     if (
-      type == "DIVIDE"
+      type === "DIVIDE"
     ) {
       if (Math.round(b) != 0)
       {
