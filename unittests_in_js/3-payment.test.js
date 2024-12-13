@@ -7,7 +7,7 @@ describe("sendPaymentRequestToApi Tests", function () {
   it("should call calculateNumber with correct arguments when sendPaymentRequestToApi is called", function () {
     sinon.spy(Utils, "calculateNumber");
     sendPaymentRequestToApi(100, 20);
-    expect(Utils.calculateNumber("SUM", 100, 20).calledOnce).to.be
+    expect(Utils.calculateNumber("SUM", 100, 20)).to.be
     .true;
     Utils.calculateNumber.restore();
   });
