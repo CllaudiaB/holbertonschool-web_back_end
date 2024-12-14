@@ -43,8 +43,8 @@ describe('Available payments endpoint', function () {
           expect(response.statusCode).to.equal(200);
           expect(JSON.parse(body)).to.deep.equal({
             payment_methods: {
-              credit_cards: true,
-              paypal: false,
+                credit_cards: true,
+                paypal: false,
             },
           });
           done();
