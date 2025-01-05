@@ -50,7 +50,7 @@ const jobs = [
 const queue = kue.createQueue();
 
 
-for (let j in jobs) {
+jobs.forEach((j) => {
     let job = queue.create('push_notification_code_2', j)
     .save((err) => {
         if (!err) {
@@ -69,4 +69,4 @@ for (let j in jobs) {
     job.on('progress', (progress) => {
         console.log(`Notification job ${job.id} ${progress}% complete`);
     });
-};
+});
